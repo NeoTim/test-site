@@ -138,12 +138,16 @@ angular.module('app.chart.ctrls', [])
         ]
 
         $scope.comboData = [
-            { year: '2008', a: 20, b: 16, c: 12 }
-            { year: '2009', a: 10, b: 22, c: 30 }
-            { year: '2010', a: 5, b: 14, c: 20 }
-            { year: '2011', a: 5, b: 12, c: 19 }
-            { year: '2012', a: 20, b: 19, c: 13}
-            { year: '2013', a: 28, b: 22, c: 20 }
+            { year: '19G19', a: 20, b: 16, c: 12 }
+            { year: '8200', a: 10, b: 22, c: 30 }
+            { year: '91W136', a: 5, b: 14, c: 20 }
+            { year: '90P00', a: 5, b: 12, c: 19 }
+            { year: '80P00', a: 5, b: 12, c: 19 }
+            { year: '92G19', a: 5, b: 12, c: 19 }
+            { year: '92G32', a: 5, b: 12, c: 19 }
+            { year: '92G13', a: 5, b: 12, c: 19 }
+            { year: '91A00', a: 20, b: 19, c: 13}
+            { year: '82B13', a: 28, b: 22, c: 20 }
         ]
 
         $scope.donutData = [

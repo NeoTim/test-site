@@ -20,12 +20,9 @@
 
 .angular-ui-tree-handle{
     position: relative;
-    display: block; 
-    margin: 5px 0; 
-    padding: 10px 10px; 
-    text-decoration: none; 
-    border: 1px solid $state-default-border;
-    background: #fff;
+
+    text-decoration: none;
+
     cursor:move;
     border-radius: $border-radius-base;
 

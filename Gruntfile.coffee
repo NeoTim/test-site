@@ -15,7 +15,7 @@ mountFolder = (connect, dir) ->
 module.exports = (grunt) ->
     require("load-grunt-tasks") grunt
     require("time-grunt") grunt
-    
+
     # configurable paths
     yeomanConfig =
         app: "client"
@@ -55,7 +55,7 @@ module.exports = (grunt) ->
         connect:
             options:
                 port: 9000
-                
+
                 # Change this to '0.0.0.0' to access the server from outside.
                 hostname: "localhost"
 
@@ -137,7 +137,7 @@ module.exports = (grunt) ->
                     cwd: "<%= yeoman.app %>/styles-less"
                     src: "main.less"
                     dest: ".tmp/styles"
-                    ext: ".css"                    
+                    ext: ".css"
                 ]
             dist:
                 options:
@@ -148,7 +148,7 @@ module.exports = (grunt) ->
                     cwd: "<%= yeoman.app %>/styles-less"
                     src: "main.less"
                     dest: ".tmp/styles"
-                    ext: ".css"                    
+                    ext: ".css"
                 ]
 
 
@@ -187,7 +187,7 @@ module.exports = (grunt) ->
                         css: ["concat"]
                     post: []
 
-        
+
         # 'css': ['concat']
         usemin:
             html: ["<%= yeoman.dist %>/**/*.html", "!<%= yeoman.dist %>/bower_components/**"]
@@ -198,7 +198,7 @@ module.exports = (grunt) ->
         htmlmin:
             dist:
                 options: {}
-                
+
                 #removeCommentsFromCDATA: true,
                 #                    // https://github.com/yeoman/grunt-usemin/issues/44
                 #                    //collapseWhitespace: true,
@@ -215,7 +215,7 @@ module.exports = (grunt) ->
                     dest: "<%= yeoman.dist %>"
                 ]
 
-        
+
         # Put files not handled in other tasks here
         copy:
             dist:

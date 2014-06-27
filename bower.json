@@ -11,7 +11,7 @@
     "angular-animate": "~1.2.0",
     "font-awesome": "~4.0.3",
     "toastr": "~2.0.1",
-    "underscore": "~1.5.2",
+    "underscore": "~1.6.0",
     "seiyria-bootstrap-slider": "~1.9.0",
     "bootstrap": "~3.1.0",
     "angular-bootstrap": "~0.10.0",
@@ -34,7 +34,9 @@
     "angular-ui-tree": "~2.0.3",
     "angularjs-google-maps": "https://github.com/allenhwkim/angularjs-google-maps.git#~0.3.8",
     "jqvmap": "*",
-    "ng-tags-input": "~2.0.1"
+    "ng-tags-input": "~2.0.1",
+    "angularfire": "~0.7.1",
+    "ng-Fx": "~0.4.1"
   },
   "devDependencies": {
     "twbs-bootstrap-sass": "~3.1.1",

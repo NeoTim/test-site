@@ -4,8 +4,8 @@ angular.module('app', [
     # Angular modules
     'ngRoute'
     'ngAnimate'
-
     # 3rd Party Modules
+    'fx.animations'
     'ui.bootstrap'
     'easypiechart'
     'mgo-angular-wizard'
@@ -13,8 +13,18 @@ angular.module('app', [
     'ui.tree'
     'ngMap'
     'ngTagsInput'
+    'app.fire.config'
+    'app.fire.services'
+    'app.fire.filters'
+    # 'app.fire.changeEmail'
+    'app.fire.controllers'
+    # 'app.simpleLoginTools'
+    'app.routeSecurity'
+    'app.admin'
+
 
     # Custom modules
+    'app.stores'
     'app.ui.ctrls'
     'app.ui.directives'
     'app.ui.services'
@@ -31,7 +41,7 @@ angular.module('app', [
     'app.chart.directives'
     'app.page.ctrls'
 ])
-    
+
 .config([
     '$routeProvider'
     ($routeProvider) ->
@@ -44,6 +54,58 @@ angular.module('app', [
             .when(
                 '/dashboard'
                 templateUrl: 'views/dashboard.html'
+            )
+
+            # Admin
+
+            .when(
+                # authRequired: true
+                '/admin'
+                templateUrl: 'views/admin/admin.html'
+            )
+
+            .when(
+                '/admin/users'
+                templateUrl: 'views/admin/users/users.html'
+            )
+
+            .when(
+                '/admin/users/:userid'
+                templateUrl: 'views/admin/users/user.html'
+            )
+            .when(
+                '/admin/rolls'
+                templateUrl: 'views/admin/rolls/rolls.html'
+            )
+
+            .when(
+                '/admin/rolls/:rollid'
+                templateUrl: 'views/admin/rolls/roll.html'
+            )
+            .when(
+                '/admin/blogs'
+                templateUrl: 'views/admin/blogs/blogs.html'
+            )
+
+            # .when(
+            #     '/admin/blogs/:blogid'
+            #     templateUrl: 'views/admin/blogs/blog.html'
+            # )
+            .when(
+                '/admin/blogs/create'
+                templateUrl: 'views/admin/blogs/create.html'
+            )
+            .when('/admin/blogs/notifications'
+                templateUrl: 'views/admin/blogs/notifications.html'
+            )
+            .when('/admin/blogs/ideas'
+                templateUrl: 'views/admin/blogs/ideas.html'
+            )
+            .when('/admin/blogs/drafts'
+                templateUrl: 'views/admin/blogs/drafts.html'
+            )
+            .when('/admin/blogs/ideas'
+                templateUrl: 'views/admin/ideas/ideas.html'
             )
 
             # UI Kit
@@ -213,11 +275,36 @@ angular.module('app', [
                 '/tasks'
                 templateUrl: 'views/tasks/tasks.html'
             )
+            .when(
+                '/stores'
+                templateUrl: 'views/stores/storesList.html'
+            )
 
             .otherwise(
                 redirectTo: '/404'
             )
 ])
+
+# .run [
+#   "loginService"
+#   "$rootScope"
+#   "FBURL"
+#   (loginService, $rootScope, FBURL) ->
+#     if FBURL is "https://INSTANCE.firebaseio.com"
+
+#       # double-check that the app has been configured
+#       angular.element(document.body).html "<h1>Please configure app/js/config.js before running!</h1>"
+#       setTimeout (->
+#         angular.element(document.body).removeClass "hide"
+#         return
+#       ), 250
+#     else
+
+#       # establish authentication
+#       $rootScope.auth = loginService.init("/login")
+#       $rootScope.FBURL = FBURL
+# ]
+
 # .run([
 #     '$rootScope'
 #     ($rootScope) ->
@@ -229,4 +316,24 @@ angular.module('app', [
 #         $rootScope.$on('$routeChangeSuccess', (event, current, previous, rejection) ->
 #             console.log 'routeChangeSuccess'
 #         )
+# ])
+
+# .run([
+#   'loginService'
+#   '$rootScope'
+#   'FBURL'
+#   (loginService, $rootScope, FBURL)->
+#     if FBURL is "http://my-data-test.firebaseio.com/tests"
+
+#       # double-check that the app has been configured
+#       angular.element(document.body).html "<h1>Please configure app/js/config.js before running!</h1>"
+#       setTimeout (->
+#         angular.element(document.body).removeClass "hide"
+#         return
+#       ), 250
+#     else
+
+#       # establish authentication
+#       $rootScope.auth = loginService.init("/pages/signin")
+#       $rootScope.FBURL = FBURL
 # ])

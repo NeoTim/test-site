@@ -1,4 +1,4 @@
-<div class="page page-table" data-ng-controller="tableCtrl">
+<div class="page page-table" data-ng-controller="storesCtrl">
     <section class="panel panel-default table-dynamic">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Bordered table</strong></div>
 
@@ -16,10 +16,10 @@
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
                         Showing {{filteredStores.length}}/{{stores.length}} entries
-                    </span>      
+                    </span>
                     <span>
                       <button type="button" class="btn btn-info pull-right" ng-click="showNew = true"><i class="fa fa-plus"></i></button>
-                    </span>        
+                    </span>
                 </div>
             </div>
         </div>
@@ -86,13 +86,13 @@
                     <button class="btn btn-info" ng-click="addStore(new)" >Done</button>
                   </td>
                 </tr>
-                <tr data-ng-repeat="store in stores">
+                <tr data-ng-repeat="(id, store) in stores">
                     <td> <a href="stores/{{store.id}}" class="btn btn-info"><i class="fa fa-edit"></i> </a> </td>
                     <td>{{store.name}}</td>
                     <td>{{store.price}}</td>
                     <td>{{store.sales}}</td>
                     <td>{{store.rating}}</td>
-                    <td> <button type="button" class="btn btn-danger" ng-click="removeStore(store.id)"><i class="fa fa-times"></i> </button> </td>
+                    <td> <button type="button" class="btn btn-danger" ng-click="removeStore(id)"><i class="fa fa-times"></i> </button> </td>
                 </tr>
 
             </tbody>
@@ -102,11 +102,11 @@
             <div class="row">
                 <div class="col-md-6 page-num-info">
                     <span>
-                        Show 
+                        Show
                         <select data-ng-model="numPerPage"
                                 data-ng-options="num for num in numPerPageOpt"
                                 data-ng-change="onNumPerPageChange()">
-                        </select> 
+                        </select>
                         entries per page
                     </span>
                 </div>
