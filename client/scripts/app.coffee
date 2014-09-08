@@ -25,6 +25,7 @@ angular.module('app', [
 
     # Custom modules
     'app.stores'
+    'app.states'
     'app.ui.ctrls'
     'app.ui.directives'
     'app.ui.services'
@@ -35,6 +36,7 @@ angular.module('app', [
     'app.ui.form.directives'
     'app.tables'
     'app.map'
+    # 'app.orders'
     'app.task'
     'app.localization'
     'app.chart.ctrls'
@@ -54,6 +56,11 @@ angular.module('app', [
             .when(
                 '/dashboard'
                 templateUrl: 'views/dashboard.html'
+            )
+            .when(
+                '/orders'
+                templateUrl: 'views/orders/orders.html',
+                controller: 'OrdersCtrl as vm'
             )
 
             # Admin
